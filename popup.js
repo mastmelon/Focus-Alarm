@@ -115,6 +115,8 @@ chrome.runtime.onMessage.addListener((msg) => {
 // live changes
 els.volume.addEventListener('input', e => storage.set({ volume: Number(e.target.value) }));
 els.volumeActive.addEventListener('input', e => storage.set({ volume: Number(e.target.value) }));
+els.volume.addEventListener('change', () => chrome.runtime.sendMessage({ type: 'PREVIEW_SOUND' }));
+els.volumeActive.addEventListener('change', () => chrome.runtime.sendMessage({ type: 'PREVIEW_SOUND' }));
 els.duration.addEventListener('change', e => {
   storage.set({ durationMin: Number(e.target.value) || 1 });
   chrome.runtime.sendMessage({ type: 'UPDATE_SESSION' });
