@@ -13,6 +13,7 @@ const els = {
   pillFreq: document.getElementById('pillFreq'),
   pauseBtn: document.getElementById('pauseBtn'),
   endBtn: document.getElementById('endBtn'),
+  sessionSection: document.getElementById('sessionSection'),
 };
 
 const storage = chrome.storage.local;
@@ -45,6 +46,7 @@ function setActiveView(active, data) {
   els.activeView.classList.toggle('hidden', !active);
   document.getElementById('volumeSection').classList.toggle('hidden', active);
   els.start.style.display = active ? 'none' : 'block';
+  els.sessionSection.classList.toggle('hidden', active);
   if (active && data) {
     els.pillTask.textContent = data.task || 'Focus session';
     els.pillFreq.textContent = `Every ${data.frequencyMin} min`;

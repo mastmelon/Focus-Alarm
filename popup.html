@@ -4,6 +4,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Focus Nudges</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="popup.css" />
   </head>
   <body>
@@ -13,7 +16,7 @@
         <button id="settingsBtn" class="icon-btn" title="Settings" aria-label="Settings">⚙️</button>
       </header>
 
-      <section class="section">
+      <section class="section" id="sessionSection">
         <h2>Session</h2>
         <label class="label" for="taskInput">Current task</label>
         <input id="taskInput" class="input" placeholder="e.g., Write project summary" />
@@ -37,11 +40,9 @@
           <input id="volumeRange" type="range" min="0" max="1" step="0.01" value="0.5" />
           <span>🔊</span>
         </div>
-        <p class="hint">Adjust the nudge sound level</p>
       </section>
 
       <button id="startBtn" class="primary">Start Focus</button>
-      <p class="footer">Click Start to begin a session. Click Stop to end it.</p>
 
       <!-- Active session view -->
       <div id="activeView" class="hidden">
