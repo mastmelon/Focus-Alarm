@@ -68,7 +68,7 @@ h1 {
 
 .field {}
 
-.volume { display: grid; grid-template-columns: auto 1fr auto; gap: 8px; align-items: center; }
+.volume { display: grid; grid-template-columns: auto 1fr; gap: 10px; align-items: center; }
 
 .primary {
   width: 100%;
