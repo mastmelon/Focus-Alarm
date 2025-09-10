@@ -1,11 +1,12 @@
 :root {
   --bg: #ffffff;
-  --card: #e9f6f3;
+  --card: #f8fafc;
   --text: #0f172a;
   --muted: #64748b;
   --primary: #42b7a9;
   --primary-strong: #2da091;
-  --border: #e5e7eb;
+  --border: #e2e8f0;
+  --section-bg: #ffffff;
 }
 
 * { box-sizing: border-box; }
@@ -19,8 +20,11 @@ html, body {
 }
 
 .card {
-  width: 360px;
-  padding: 16px;
+  width: 380px;
+  padding: 20px;
+  background: var(--card);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 .header { display: grid; grid-template-columns: 1fr; align-items: center; }
@@ -32,12 +36,13 @@ h1 {
 }
 
 .section {
-  background: var(--card);
+  background: var(--section-bg);
   border-radius: 12px;
-  padding: 14px;
-  margin-top: 14px;
+  padding: 16px;
+  margin-top: 16px;
   border: 1px solid var(--border);
   overflow: hidden; /* prevent children from peeking outside rounded corners */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .label { display: block; color: var(--muted); margin-bottom: 6px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 12px; }
@@ -84,16 +89,22 @@ h1 {
   width: 100%;
   margin-top: 16px;
   padding: 12px 14px;
-  background: var(--primary);
+  background: linear-gradient(135deg, #42b7a9 0%, #2da091 100%);
   color: white;
   border: 0;
   border-radius: 12px;
   font-weight: 600;
   font-size: 14px;
   cursor: pointer;
+  box-shadow: 0 2px 8px rgba(66, 183, 169, 0.3);
+  transition: all 0.2s ease;
 }
 
-.primary:hover { background: var(--primary-strong); }
+.primary:hover { 
+  background: linear-gradient(135deg, #2da091 0%, #1e7a6b 100%);
+  box-shadow: 0 4px 12px rgba(66, 183, 169, 0.4);
+  transform: translateY(-1px);
+}
 
 .footer { color: var(--muted); font-size: 12px; text-align: center; }
 
@@ -103,8 +114,8 @@ h1 {
 
 .hidden { display: none; }
 
-.pillrow { display: flex; gap: 10px; flex-wrap: wrap; }
-.pill { background: #d7efe9; color: #0f766e; padding: 6px 10px; border-radius: 999px; font-weight: 600; font-size: 13px; }
+.pillrow { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; align-items: center; }
+.pill { background: #d7efe9; color: #0f766e; padding: 8px 14px; border-radius: 999px; font-weight: 600; font-size: 13px; white-space: nowrap; }
 
 .timer { text-align: center; padding: 10px 6px; }
 .timer #remaining { font-size: 34px; font-weight: 700; letter-spacing: 1px; }
