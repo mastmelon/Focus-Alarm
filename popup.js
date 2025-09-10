@@ -120,8 +120,14 @@ els.volume.addEventListener('input', e => storage.set({ volume: Number(e.target.
 els.volumeActive.addEventListener('input', e => storage.set({ volume: Number(e.target.value) }));
 els.volume.addEventListener('change', () => chrome.runtime.sendMessage({ type: 'PREVIEW_SOUND' }));
 els.volumeActive.addEventListener('change', () => chrome.runtime.sendMessage({ type: 'PREVIEW_SOUND' }));
-els.soundSelect?.addEventListener('change', e => storage.set({ sound: e.target.value }));
-els.soundSelectActive?.addEventListener('change', e => storage.set({ sound: e.target.value }));
+els.soundSelect?.addEventListener('change', e => {
+  storage.set({ sound: e.target.value });
+  chrome.runtime.sendMessage({ type: 'PREVIEW_SOUND' });
+});
+els.soundSelectActive?.addEventListener('change', e => {
+  storage.set({ sound: e.target.value });
+  chrome.runtime.sendMessage({ type: 'PREVIEW_SOUND' });
+});
 els.duration.addEventListener('change', e => {
   storage.set({ durationMin: Number(e.target.value) || 1 });
   chrome.runtime.sendMessage({ type: 'UPDATE_SESSION' });
