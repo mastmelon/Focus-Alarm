@@ -23,12 +23,7 @@ html, body {
   padding: 16px;
 }
 
-.header {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: center;
-  gap: 8px;
-}
+.header { display: grid; grid-template-columns: 1fr; align-items: center; }
 
 h1 {
   margin: 0;
@@ -68,7 +63,22 @@ h1 {
 
 .field {}
 
-.volume { display: grid; grid-template-columns: auto 1fr; gap: 10px; align-items: center; }
+.volume { display: grid; grid-template-columns: auto 1fr auto; gap: 10px; align-items: center; }
+.vol-icon { color: #0f766e; display: inline-flex; align-items: center; justify-content: center; }
+.sound-select { 
+  padding: 6px 8px 6px 10px; 
+  border-radius: 8px; 
+  border: 1px solid var(--border); 
+  font-size: 12px; 
+  background: #fff; 
+  min-width: 100px;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 6px center;
+  background-repeat: no-repeat;
+  background-size: 12px;
+  padding-right: 24px;
+}
 
 .primary {
   width: 100%;

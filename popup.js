@@ -4,9 +4,11 @@ const els = {
   frequency: document.getElementById('frequencyInput'),
   volume: document.getElementById('volumeRange'),
   start: document.getElementById('startBtn'),
-  settings: document.getElementById('settingsBtn'),
+  // settings removed
   activeView: document.getElementById('activeView'),
   volumeActive: document.getElementById('volumeRangeActive'),
+  soundSelect: document.getElementById('soundSelect'),
+  soundSelectActive: document.getElementById('soundSelectActive'),
   remaining: document.getElementById('remaining'),
   progressFill: document.getElementById('progressFill'),
   pillTask: document.getElementById('pillTask'),
@@ -24,6 +26,7 @@ async function restore() {
     durationMin: 45,
     frequencyMin: 5,
     volume: 0.5,
+    sound: 'ping1',
     active: false,
     paused: false,
     start: 0,
@@ -34,6 +37,8 @@ async function restore() {
   els.frequency.value = data.frequencyMin;
   els.volume.value = data.volume;
   els.volumeActive.value = data.volume;
+  if (els.soundSelect) els.soundSelect.value = data.sound;
+  if (els.soundSelectActive) els.soundSelectActive.value = data.sound;
   updateStartButton(data.active);
   setActiveView(data.active, data);
 }
@@ -73,9 +78,7 @@ function tickTimer(data) {
   window.__timer = setInterval(update, 1000);
 }
 
-els.settings.addEventListener('click', () => {
-  chrome.runtime.openOptionsPage();
-});
+// settings removed
 
 els.start.addEventListener('click', async () => {
   const task = els.task.value.trim();
@@ -117,6 +120,8 @@ els.volume.addEventListener('input', e => storage.set({ volume: Number(e.target.
 els.volumeActive.addEventListener('input', e => storage.set({ volume: Number(e.target.value) }));
 els.volume.addEventListener('change', () => chrome.runtime.sendMessage({ type: 'PREVIEW_SOUND' }));
 els.volumeActive.addEventListener('change', () => chrome.runtime.sendMessage({ type: 'PREVIEW_SOUND' }));
+els.soundSelect?.addEventListener('change', e => storage.set({ sound: e.target.value }));
+els.soundSelectActive?.addEventListener('change', e => storage.set({ sound: e.target.value }));
 els.duration.addEventListener('change', e => {
   storage.set({ durationMin: Number(e.target.value) || 1 });
   chrome.runtime.sendMessage({ type: 'UPDATE_SESSION' });
