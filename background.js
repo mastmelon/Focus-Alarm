@@ -72,6 +72,8 @@ async function togglePause() {
   } else {
     await refreshAlarmsFromStorage();
   }
+  // Notify popup of pause state change
+  chrome.runtime.sendMessage({ type: 'PAUSE_STATE', paused: newPaused }).catch(() => {});
 }
 
 async function refreshAlarmsFromStorage() {
