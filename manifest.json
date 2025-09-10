@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Focus Nudges",
+  "description": "Gentle audio reminders to stay on task.",
+  "version": "0.1.0",
+  "action": {
+    "default_title": "Focus Nudges",
+    "default_popup": "popup.html"
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": false
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "permissions": [
+    "alarms",
+    "storage",
+    "offscreen"
+  ],
+  "icons": {}
+}
+

@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Focus Nudges</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <div class="card">
+      <header class="header">
+        <h1>Focus Nudges</h1>
+        <button id="settingsBtn" class="icon-btn" title="Settings" aria-label="Settings">⚙️</button>
+        <label class="switch">
+          <input type="checkbox" id="masterToggle" />
+          <span class="slider"></span>
+        </label>
+      </header>
+
+      <section class="section">
+        <h2>Session</h2>
+        <label class="label" for="taskInput">Current task</label>
+        <input id="taskInput" class="input" placeholder="e.g., Write project summary" />
+
+        <div class="row">
+          <div class="field">
+            <label class="label" for="durationInput">Focus duration (min)</label>
+            <input id="durationInput" class="input" type="number" min="1" value="45" />
+          </div>
+          <div class="field">
+            <label class="label" for="frequencyInput">Nudge frequency (min)</label>
+            <input id="frequencyInput" class="input" type="number" min="1" value="5" />
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <label class="label">Volume</label>
+        <div class="volume">
+          <span>🔈</span>
+          <input id="volumeRange" type="range" min="0" max="1" step="0.01" value="0.5" />
+          <span>🔊</span>
+        </div>
+        <p class="hint">Adjust the nudge sound level</p>
+      </section>
+
+      <button id="startBtn" class="primary">Start Focus</button>
+      <p class="footer">Toggle On to start a session. Turn Off anytime to stop.</p>
+    </div>
+
+    <script type="module" src="popup.js"></script>
+  </body>
+  </html>
+
+
