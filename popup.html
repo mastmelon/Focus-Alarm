@@ -30,7 +30,7 @@
         </div>
       </section>
 
-      <section class="section">
+      <section class="section" id="volumeSection">
         <label class="label">Volume</label>
         <div class="volume">
           <span>🔈</span>
@@ -42,6 +42,36 @@
 
       <button id="startBtn" class="primary">Start Focus</button>
       <p class="footer">Click Start to begin a session. Click Stop to end it.</p>
+
+      <!-- Active session view -->
+      <div id="activeView" class="hidden">
+        <div class="section">
+          <div class="pillrow">
+            <span class="pill" id="pillTask">Task</span>
+            <span class="pill" id="pillFreq">Every 5 min</span>
+          </div>
+          <div class="timer">
+            <div id="remaining">00:00</div>
+            <small>Remaining</small>
+            <div class="bar"><div class="fill" id="progressFill" style="width:0%"></div></div>
+          </div>
+        </div>
+
+        <section class="section">
+          <label class="label">Volume</label>
+          <div class="volume">
+            <span>🔈</span>
+            <input id="volumeRangeActive" type="range" min="0" max="1" step="0.01" value="0.5" />
+            <span>🔊</span>
+          </div>
+        </section>
+
+        <div class="row-cta">
+          <button id="pauseBtn" class="secondary">Pause</button>
+          <button id="endBtn" class="danger">End Session</button>
+        </div>
+        <p class="footer">Nudges will pause when paused.</p>
+      </div>
     </div>
 
     <script type="module" src="popup.js"></script>

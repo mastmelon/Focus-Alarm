@@ -3,12 +3,19 @@
 chrome.runtime.onMessage.addListener(async (msg) => {
   if (msg?.type === 'PLAY_SOUND') {
     const { volume = 0.5, sound = 'ping1' } = msg.payload || {};
-    playTone(sound, volume);
+    try {
+      await playTone(sound, volume);
+    } catch (e) {
+      // ignore
+    }
   }
 });
 
-function playTone(soundKey, volume) {
-  const ctx = new AudioContext();
+async function playTone(soundKey, volume) {
+  const ctx = new (self.AudioContext || self.webkitAudioContext)();
+  if (ctx.state === 'suspended') {
+    try { await ctx.resume(); } catch (e) {}
+  }
   const gain = ctx.createGain();
   gain.gain.value = volume;
   gain.connect(ctx.destination);
