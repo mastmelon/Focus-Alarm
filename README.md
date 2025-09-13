@@ -1,4 +1,4 @@
-Focus Nudges (MV3)
+Focus Alarm (MV3)
 
 Minimal Chrome extension that gently plays a soft sound every X minutes to remind you to stay on your current task.
 

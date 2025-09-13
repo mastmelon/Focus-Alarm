@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Focus Nudges</title>
+    <title>Focus Alarm</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Nexa+Serif:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -12,22 +12,27 @@
   <body>
     <div class="card">
       <header class="header">
-        <h1>Focus Nudges</h1>
+        <h1>Focus Alarm</h1>
       </header>
 
       <section class="section" id="sessionSection">
-        <h2>Session</h2>
         <label class="label" for="taskInput">Current task</label>
         <input id="taskInput" class="input" placeholder="e.g., Write project summary" />
 
         <div class="row">
           <div class="field">
-            <label class="label" for="durationInput">Focus duration (min)</label>
-            <input id="durationInput" class="input" type="number" min="1" value="45" />
+            <label class="label" for="durationInput">Focus duration</label>
+            <div class="input-wrapper">
+              <input id="durationInput" class="input" type="number" min="1" value="45" />
+              <span class="input-suffix">minutes</span>
+            </div>
           </div>
           <div class="field">
-            <label class="label" for="frequencyInput">Nudge frequency (min)</label>
-            <input id="frequencyInput" class="input" type="number" min="1" value="5" />
+            <label class="label" for="frequencyInput">Nudge frequency</label>
+            <div class="input-wrapper">
+              <input id="frequencyInput" class="input" type="number" min="1" value="5" />
+              <span class="input-suffix">minutes</span>
+            </div>
           </div>
         </div>
       </section>

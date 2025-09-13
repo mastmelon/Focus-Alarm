@@ -39,12 +39,28 @@ async function restore() {
   els.volumeActive.value = data.volume;
   if (els.soundSelect) els.soundSelect.value = data.sound;
   if (els.soundSelectActive) els.soundSelectActive.value = data.sound;
+  
+  // Update suffix visibility based on input values
+  updateInputSuffixes();
   updateStartButton(data.active);
   setActiveView(data.active, data);
 }
 
 function updateStartButton(active) {
   els.start.textContent = active ? 'Stop' : 'Start Focus';
+}
+
+function updateInputSuffixes() {
+  // Show "minutes" suffix only when inputs are empty
+  const durationSuffix = document.querySelector('#durationInput + .input-suffix');
+  const frequencySuffix = document.querySelector('#frequencyInput + .input-suffix');
+  
+  if (durationSuffix) {
+    durationSuffix.style.opacity = els.duration.value ? '0' : '1';
+  }
+  if (frequencySuffix) {
+    frequencySuffix.style.opacity = els.frequency.value ? '0' : '1';
+  }
 }
 
 function setActiveView(active, data) {
@@ -131,12 +147,18 @@ els.soundSelectActive?.addEventListener('change', e => {
   storage.set({ sound: e.target.value });
   chrome.runtime.sendMessage({ type: 'PREVIEW_SOUND' });
 });
-els.duration.addEventListener('change', e => {
+els.duration.addEventListener('input', e => {
+  updateInputSuffixes();
   storage.set({ durationMin: Number(e.target.value) || 1 });
+});
+els.duration.addEventListener('change', e => {
   chrome.runtime.sendMessage({ type: 'UPDATE_SESSION' });
 });
-els.frequency.addEventListener('change', e => {
+els.frequency.addEventListener('input', e => {
+  updateInputSuffixes();
   storage.set({ frequencyMin: Number(e.target.value) || 1 });
+});
+els.frequency.addEventListener('change', e => {
   chrome.runtime.sendMessage({ type: 'UPDATE_SESSION' });
 });
 

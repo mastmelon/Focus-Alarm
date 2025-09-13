@@ -1,10 +1,10 @@
 {
   "manifest_version": 3,
-  "name": "Focus Nudges",
-  "description": "Gentle audio reminders to stay on task.",
-  "version": "0.1.0",
+  "name": "Focus Alarm",
+  "description": "Gentle audio reminders to help you stay focused on your tasks. Set custom intervals and choose from multiple soothing sounds.",
+  "version": "1.0.0",
   "action": {
-    "default_title": "Focus Nudges",
+    "default_title": "Focus Alarm",
     "default_popup": "popup.html"
   },
   "options_ui": {
@@ -20,6 +20,13 @@
     "storage",
     "offscreen"
   ],
-  "icons": {}
+  "icons": {
+    "16": "icon-16.png",
+    "19": "icon-19.png",
+    "38": "icon-38.png",
+    "48": "icon-48.png",
+    "128": "icon-128.png",
+    "256": "icon-256.png"
+  }
 }
 
