@@ -47,7 +47,7 @@ async function restore() {
 }
 
 function updateStartButton(active) {
-  els.start.textContent = active ? 'Stop' : 'Start Focus';
+  els.start.textContent = active ? 'Stop' : 'Start Session';
 }
 
 function updateInputSuffixes() {

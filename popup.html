@@ -16,19 +16,19 @@
       </header>
 
       <section class="section" id="sessionSection">
-        <label class="label" for="taskInput">Current task</label>
+        <label class="label" for="taskInput">What are you working on?</label>
         <input id="taskInput" class="input" placeholder="e.g., Write project summary" />
 
         <div class="row">
           <div class="field">
-            <label class="label" for="durationInput">Focus duration</label>
+            <label class="label" for="durationInput">Duration</label>
             <div class="input-wrapper">
               <input id="durationInput" class="input" type="number" min="1" value="45" />
               <span class="input-suffix">minutes</span>
             </div>
           </div>
           <div class="field">
-            <label class="label" for="frequencyInput">Nudge frequency</label>
+            <label class="label" for="frequencyInput">Reminder interval</label>
             <div class="input-wrapper">
               <input id="frequencyInput" class="input" type="number" min="1" value="5" />
               <span class="input-suffix">minutes</span>
@@ -38,7 +38,7 @@
       </section>
 
       <section class="section" id="volumeSection">
-        <h2>Nudge Preferences</h2>
+        <h2>Audio Preferences</h2>
         <div class="volume">
           <span class="vol-icon" title="Volume" aria-label="Volume">
             <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
@@ -52,11 +52,16 @@
             <option value="ping1">Soft Ping</option>
             <option value="ping2">Gentle Bell</option>
             <option value="ping3">Calm Chime</option>
+            <option value="ping4">Digital Beep</option>
+            <option value="ping5">Wooden Click</option>
+            <option value="ping6">Crystal Tone</option>
+            <option value="ping7">Warm Bell</option>
+            <option value="ping8">Zen Gong</option>
           </select>
         </div>
       </section>
 
-      <button id="startBtn" class="primary">Start Focus</button>
+      <button id="startBtn" class="primary">Start Session</button>
 
       <!-- Active session view -->
       <div id="activeView" class="hidden">
@@ -73,7 +78,7 @@
         </div>
 
         <section class="section">
-          <h2>Nudge Preferences</h2>
+          <h2>Audio Preferences</h2>
           <div class="volume">
             <span class="vol-icon" title="Volume" aria-label="Volume">
               <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
@@ -87,6 +92,11 @@
               <option value="ping1">Soft Ping</option>
               <option value="ping2">Gentle Bell</option>
               <option value="ping3">Calm Chime</option>
+              <option value="ping4">Digital Beep</option>
+              <option value="ping5">Wooden Click</option>
+              <option value="ping6">Crystal Tone</option>
+              <option value="ping7">Warm Bell</option>
+              <option value="ping8">Zen Gong</option>
             </select>
           </div>
         </section>
