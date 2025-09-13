@@ -16,6 +16,7 @@
       </header>
 
       <section class="section" id="sessionSection">
+        <h2>Session</h2>
         <label class="label" for="taskInput">What are you working on?</label>
         <input id="taskInput" class="input" placeholder="e.g., Write project summary" />
 
@@ -48,7 +49,7 @@
             </svg>
           </span>
           <input id="volumeRange" type="range" min="0" max="1" step="0.01" value="0.5" />
-          <select id="soundSelect" class="sound-select" aria-label="Nudge sound">
+          <select id="soundSelect" class="sound-select" aria-label="Reminder sound">
             <option value="ping1">Soft Ping</option>
             <option value="ping2">Gentle Bell</option>
             <option value="ping3">Calm Chime</option>
@@ -88,7 +89,7 @@
               </svg>
             </span>
             <input id="volumeRangeActive" type="range" min="0" max="1" step="0.01" value="0.5" />
-            <select id="soundSelectActive" class="sound-select" aria-label="Nudge sound">
+            <select id="soundSelectActive" class="sound-select" aria-label="Reminder sound">
               <option value="ping1">Soft Ping</option>
               <option value="ping2">Gentle Bell</option>
               <option value="ping3">Calm Chime</option>
@@ -102,7 +103,7 @@
         </section>
 
         <div class="row-cta">
-          <button id="pauseBtn" class="secondary">Pause nudges</button>
+          <button id="pauseBtn" class="secondary">Mute Alerts</button>
           <button id="endBtn" class="danger">End Session</button>
         </div>
       </div>

@@ -130,7 +130,7 @@ chrome.runtime.onMessage.addListener((msg) => {
     else setActiveView(false);
   }
   if (msg?.type === 'PAUSE_STATE') {
-    els.pauseBtn.textContent = msg.paused ? 'Unpause nudges' : 'Pause nudges';
+    els.pauseBtn.textContent = msg.paused ? 'Unmute Alerts' : 'Mute Alerts';
   }
 });
 
@@ -166,7 +166,7 @@ els.pauseBtn?.addEventListener('click', async () => {
   const { paused = false } = await chrome.storage.local.get({ paused: false });
   chrome.runtime.sendMessage({ type: 'TOGGLE_PAUSE' });
   // Update button text immediately based on current state (will be toggled)
-  els.pauseBtn.textContent = paused ? 'Pause nudges' : 'Unpause nudges';
+  els.pauseBtn.textContent = paused ? 'Mute Alerts' : 'Unmute Alerts';
 });
 els.endBtn?.addEventListener('click', () => chrome.runtime.sendMessage({ type: 'STOP_SESSION' }));
 
