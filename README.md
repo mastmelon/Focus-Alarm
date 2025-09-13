@@ -1,6 +1,6 @@
-# Focus Alarm (MV3)
+# Focus Alarm 
 
-A beautiful, minimal Chrome extension that gently plays a soft sound every X minutes to remind you to stay focused on your current task.
+A beautiful, super simple Chrome extension that gently plays a soft sound every X minutes to remind you to stay focused on your current task.
 
 ## Screenshots
 
