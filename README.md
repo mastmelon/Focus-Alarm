@@ -24,7 +24,7 @@ A beautiful, super simple Chrome extension that gently plays a soft sound every 
 ## Installation (Developer Mode)
 
 1. Open Chrome → Extensions → toggle Developer mode
-2. Click "Load unpacked" and select this `NudgeMe` folder
+2. Click "Load unpacked" and select this `Focus Alarm` folder
 3. Pin the extension and click the icon to start a session
 
 ## Usage
@@ -46,7 +46,7 @@ A beautiful, super simple Chrome extension that gently plays a soft sound every 
 ## File Structure
 
 ```
-NudgeMe/
+Focus Alarm/
 ├── manifest.json          # Extension manifest
 ├── popup.html/css/js      # Main UI interface
 ├── background.js          # Service worker for session management

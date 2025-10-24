@@ -3,6 +3,7 @@
   "name": "Focus Alarm",
   "description": "Gentle audio reminders to help you stay focused on your tasks. Set custom intervals and choose from multiple soothing sounds.",
   "version": "1.0.0",
+  "author": "Focus Alarm Team",
   "action": {
     "default_title": "Focus Alarm",
     "default_popup": "popup.html"
